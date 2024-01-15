@@ -39,7 +39,7 @@ const typeColor = {
   water: "#0190FF",
 };
 const url = " https://pokeapi.co/api/v2/pokemon/";
-const card = document.getElementById("card");
+const card = document.getElementById('card');
 const btn = document.getElementById("btn");
 
 let getPokeData = () => {
