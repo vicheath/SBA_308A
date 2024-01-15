@@ -1,13 +1,10 @@
-const apiUrl = 'https://api.waifu.im/search';  // Replace with the actual API endpoint URL
-const params = {
-  included_tags: 'maid',
-  height: '>=2000'
-};
+const apiUrl = 'https://api.waifu.im/fav';
 
-const queryParams = new URLSearchParams(params);
-const requestUrl = `${apiUrl}?${queryParams}`;
+const headers = new Headers();
+headers.append('Accept-Version', 'v5');
+headers.append('Authorization', 'Bearer id_O5Lyfs0dsVMln1bUpvxYe9b3dKQU0Hub66X-OJCKEYjCaLrSDQrHCdXX1pPCFQ4SwpoLoBIEWlCzzFPaeR3CePITIRO4jdV67_smi4w6LxhHcH9GRCvs4vWnm0VsdffJGT8tvYApOO2n1QxppxarOjD345ApOXkCp4qSpk3g');
 
-fetch(requestUrl)
+fetch(apiUrl, { headers })
   .then(response => {
     if (response.ok) {
       return response.json();
