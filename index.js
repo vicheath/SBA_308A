@@ -1,25 +1,3 @@
-// const apiUrl = 'https://api.waifu.im/fav';
-
-// const headers = new Headers();
-// headers.append('Accept-Version', 'v5');
-// headers.append('Authorization', 'Bearer id_O5Lyfs0dsVMln1bUpvxYe9b3dKQU0Hub66X-OJCKEYjCaLrSDQrHCdXX1pPCFQ4SwpoLoBIEWlCzzFPaeR3CePITIRO4jdV67_smi4w6LxhHcH9GRCvs4vWnm0VsdffJGT8tvYApOO2n1QxppxarOjD345ApOXkCp4qSpk3g');
-
-// fetch(apiUrl, { headers })
-//   .then(response => {
-//     if (response.ok) {
-//       return response.json();
-//     } else {
-//       throw new Error('Request failed with status code: ' + response.status);
-//     }
-//   })
-//   .then(data => {
-//     // Process the response data as needed
-//     console.log(data);
-//   })
-//   .catch(error => {
-//     console.error('An error occurred:', error.message);
-//   });
-
 const typeColor = {
   bug: "#26de81",
   dragon: "#ffeaa7",
@@ -39,12 +17,12 @@ const typeColor = {
   water: "#0190FF",
 };
 const url = " https://pokeapi.co/api/v2/pokemon/";
-const card = document.getElementById('card');
+const card = document.getElementById("card");
 const btn = document.getElementById("btn");
 
 let getPokeData = () => {
   // Generate a random number between 1 and 150
-  let id = Math.floor(Math.random() * 150) + 1;
+  let id = Math.floor(Math.random() * 100) + 1;
   // Combine the pokeapi url with pokemon id
   const finalUrl = url + id;
   // Fetch generated URL
@@ -60,7 +38,7 @@ let getPokeData = () => {
 let generateCard = (data) => {
   // Get necessary data and assign it to variables
   console.log(data);
-  const hp = data.stats[0].base_stat;
+  const hp = data.stats[3].base_stat;
   const imgSrc = data.sprites.other.dream_world.front_default;
   const pokeName = data.name[0].toUpperCase() + data.name.slice(1);
   const statAttack = data.stats[1].base_stat;
