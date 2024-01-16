@@ -25,7 +25,6 @@ To use the Pokemon Card Generator:
 ## Code Overview
 
 ### Constants
-
 ```javascript
 const typeColor = {
   bug: "#26de81",
@@ -38,9 +37,9 @@ const btn = document.getElementById("btn");
 typeColor: An object that maps Pokemon types to their corresponding color codes, used for styling the card.
 url: The base URL for fetching Pokemon data from the PokeAPI.
 card and btn: Variables storing references to the HTML elements with IDs "card" and "btn," respectively.
+
 Fetching Pokemon Data
-javascript
-Copy code
+
 let getPokeData = () => {
   // Generate a random number between 1 and 500
   let id = Math.floor(Math.random() * 500) + 1;
@@ -53,11 +52,11 @@ let getPokeData = () => {
       generateCard(data);
     });
 };
+
 The getPokeData function generates a random Pokemon ID, appends it to the PokeAPI URL, and fetches the corresponding Pokemon data.
 It uses promises to handle the asynchronous nature of the fetch operation.
 Generating Pokemon Card
-javascript
-Copy code
+
 let generateCard = (data) => {
   // Get necessary data and assign it to variables
   const hp = data.stats[3].base_stat;
@@ -101,9 +100,9 @@ let generateCard = (data) => {
 };
 The generateCard function takes Pokemon data and dynamically updates the HTML content of the card with details such as HP, image, name, and stats.
 It sets the background and type colors based on the Pokemon's primary type.
+
 Appending Pokemon Types
-javascript
-Copy code
+
 let appendTypes = (types) => {
   types.forEach((item) => {
     let span = document.createElement("SPAN");
@@ -112,9 +111,8 @@ let appendTypes = (types) => {
   });
 };
 The appendTypes function dynamically creates span elements for each Pokemon type and appends them to the "types" div within the card.
+
 Styling the Card
-javascript
-Copy code
 let styleCard = (color) => {
   card.style.background = `radial-gradient(circle at 50% 0%, ${color} 36%, #ffffff 36%)`;
   card.querySelectorAll(".types span").forEach((typeColor) => {
@@ -123,9 +121,8 @@ let styleCard = (color) => {
 };
 The styleCard function sets the background of the card to a radial gradient based on the Pokemon's type color.
 It updates the background color of each Pokemon type span to match the theme color.
+
 Event Listeners
-javascript
-Copy code
 btn.addEventListener("click", getPokeData);
 window.addEventListener("load", getPokeData);
 Event listeners are attached to the "Generate" button and window load events.
