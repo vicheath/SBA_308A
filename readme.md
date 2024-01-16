@@ -22,7 +22,11 @@ To use the Pokemon Card Generator:
 
 ### Constants
 
-<!-- ```javascript
+## Code Overview
+
+### Constants
+
+```javascript
 const typeColor = {
   bug: "#26de81",
   dragon: "#ffeaa7",
