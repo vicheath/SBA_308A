@@ -22,7 +22,7 @@ const btn = document.getElementById("btn");
 
 let getPokeData = () => {
   // Generate a random number between 1 and 150
-  let id = Math.floor(Math.random() * 100) + 1;
+  let id = Math.floor(Math.random() * 500) + 1;
   // Combine the pokeapi url with pokemon id
   const finalUrl = url + id;
   // Fetch generated URL
